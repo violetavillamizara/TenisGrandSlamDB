@@ -14,13 +14,59 @@ Es esencial tener en cuenta la nacionalidad de los jugadores, ya que estos puede
 ![img]()
 
 
-1. **Entidad**
+1. **jugador**
 
-- atributo (PK)
-- atributo (varchar 255)
-- atributo (...)
-- atributo (FK)
-- atributo (UC)
+- id (PK)
+- nombre (varchar 50)
+- apellido (varchar 50)
+- sexo (varchar 20)
+- nacionalidad (varchar 50)
+
+2. **torneo**
+
+- id (PK)
+- pais (varchar 50)
+- ubicacion (varchar 100)
+- año (year)
+
+3. **partido**
+
+- id (PK)
+- modalidad de juego (varchar 100)
+- fase (varchar 100)
+- torneo_id (FK)
+- jugador_id (FK)
+- arbitro (varchar 50)
+
+4. **resultado**
+
+- id (PK)
+- tipo (enum ganador, perdedor)
+- partido_id (FK)
+- jugador_id (FK)
+- premio_id (FK)
+
+5. **premio**
+
+- id (PK)
+- tipo (enum consolacion, copa)
+- monto (INT)
+- fase (varchar 100)
+
+6. **entrenamiento**
+
+- id (PK)
+- jugador_id (FK)
+- entrenador_id (FK)
+- fecha (date)
+- hora inicio (time)
+- hora fin (time)
+
+7. **entrenador**
+
+- id (PK)
+- nombre (varchar 50)
+- apellido (varchar 50)
 
 
 > Modelo Físico
