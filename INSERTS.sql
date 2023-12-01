@@ -99,3 +99,10 @@ INSERT INTO partido VALUES (16, 'dobles mixtos', 'octavos de final', 'Wilkinson'
 
 INSERT INTO partido VALUES (17, 'individual masculino', 'Cuartos de final', 'Wilkinson', 18,12);
 INSERT INTO partido VALUES (18, 'individual masculino', 'Final', 'Wilkinson', 21,9);
+
+
+INSERT INTO resultado VALUES (1, 'ganador', 17, 12, 5);
+INSERT INTO resultado VALUES (2, 'ganador', 18, 9, 5);
+INSERT INTO resultado VALUES (3, 'ganador', 1, 4, 4);
+INSERT INTO resultado VALUES (4, 'ganador', 2, 4, 4);
+
