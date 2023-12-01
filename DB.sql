@@ -45,3 +45,18 @@ CREATE TABLE `resultado`(
     `jugador_id` INT NOT NULL,
     `premio_id` INT NOT NULL
 );
+
+ALTER TABLE
+    `entrenamiento` ADD CONSTRAINT `FK_entrenamiento_entrenador` FOREIGN KEY(`entrenador_id`) REFERENCES `entrenador`(`id`);
+ALTER TABLE
+    `entrenamiento` ADD CONSTRAINT `FK_entrenamiento_jugador` FOREIGN KEY(`jugador_id`) REFERENCES `jugador`(`id`);
+ALTER TABLE
+    `partido` ADD CONSTRAINT `FK_partido_jugador` FOREIGN KEY(`jugador_id`) REFERENCES `jugador`(`id`);
+ALTER TABLE
+    `partido` ADD CONSTRAINT `FK_partido_torneo` FOREIGN KEY(`torneo_id`) REFERENCES `torneo`(`id`);
+ALTER TABLE
+    `resultado` ADD CONSTRAINT `FK_resultado_jugador` FOREIGN KEY(`jugador_id`) REFERENCES `jugador`(`id`);
+ALTER TABLE
+    `resultado` ADD CONSTRAINT `FK_resultado_partido` FOREIGN KEY(`partido_id`) REFERENCES `partido`(`id`);
+ALTER TABLE
+    `resultado` ADD CONSTRAINT `FK_resultado_premio` FOREIGN KEY(`premio_id`) REFERENCES `premio`(`id`);
