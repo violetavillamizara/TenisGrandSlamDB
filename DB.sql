@@ -36,7 +36,7 @@ CREATE TABLE `premio`(
     `id` INT NOT NULL PRIMARY KEY,
     `tipo` ENUM('consolacion','ganador') NOT NULL,
     `monto` INT NOT NULL,
-    `fase` INT NOT NULL
+    `fase` VARCHAR(100) NOT NULL
 );
 CREATE TABLE `resultado`(
     `id` INT NOT NULL PRIMARY KEY,
