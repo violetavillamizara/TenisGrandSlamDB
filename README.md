@@ -116,7 +116,18 @@ Consultas
 3. Ganancias percibidas en premios por un jugador a lo largo del torneo.
 
     ```sql
-      # Consulta Aqui
+      DELIMITER $$
+      CREATE PROCEDURE ganaciasTotalesJugador(IN jugador_id INT)
+      BEGIN
+        SELECT j.nombre, SUM(p.monto) AS ganancias
+        FROM resultado r
+        JOIN premio p ON r.premio_id = p.id
+        JOIN jugador j ON r.jugador_id = j.id
+        WHERE j.id = jugador_id;
+      END $$
+      DELIMITER ;
+
+      CALL ganaciasTotalesJugador(4);
     ```
 
 4. Lista de entrenadores que han entrenado a un jugador a lo largo del torneo y fechas en las que lo hizo.
